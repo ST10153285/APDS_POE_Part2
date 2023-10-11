@@ -1,0 +1,40 @@
+###
+GET http://localhost:5050/ HTTP/1.1
+###
+GET https://localhost:5050/ HTTP/1.1
+###
+GET http://localhost:5050/record HTTP/1.1
+###
+GET https://localhost:5050/record HTTP/1.1
+###
+POST https://localhost:5050/user/signup HTTP/1.1
+content-Type: application/json
+
+{
+    "name": "zondosibu9", 
+    "password": "password"
+}
+
+###
+POST https://localhost:5050/user/login HTTP/1.1
+content-Type: application/json
+
+{
+    "name": "zondosibu9", 
+    "password": "password"
+}
+
+###
+POST https://localhost:5050/record/create HTTP/1.1
+content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXNzd29yZCI6InBhc3N3b3JkIiwiaWF0IjoxNjk2ODUxNzE3LCJleHAiOjE2OTY4NTUzMTd9.gh89VTmEbbRBvlm09-lIyEBGT3sNiNdfKeGiCeQxNdw
+
+{
+    "name": "zondosibu9"
+   
+}
+
+###
+DELETE  https://localhost:5050/record/ HTTP/1.1
+content-Type: application/json
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXNzd29yZCI6InBhc3N3b3JkIiwiaWF0IjoxNjk2ODUwNDM1LCJleHAiOjE2OTY4NTQwMzV9.PbssnnglJzJXnZEpqNVpBQP-iGy2vFDwD_Y2udHkOc4
