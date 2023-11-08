@@ -3,7 +3,7 @@ dotenv.config();
 import express from "express";
 import cors from "cors";
 import "./loadEnvironment.mjs";
-import https from "https";
+import http from "http";
 import path from "path";
 import fs from "fs";
 
@@ -13,11 +13,12 @@ const key = process.env.PRIVATE_KEY
 console.log(cert + "CERT AND KEY" + key)
 
 
-const options = {
+/*const options = {
   key: fs.readFileSync(key),                  //Change Private Key Path here
   cert: fs.readFileSync(cert),            //Change Main Certificate Path here
 
-  }
+}
+*/
 
 
 import records from "./routes/record.mjs";
@@ -39,7 +40,7 @@ app.use((reg,res,next)=>
 app.use("/record", records);
 app.use("/user",user);
 
-let server = https.createServer(options,app)
+let server = http.createServer(app)
 
 
 app.get('/record',(req,res)=>{
